@@ -7,7 +7,7 @@ class Application
     if req.path.match(/items/)
     else
       resp.status = 404
-      resp.write "Route Not Found"
+      resp.write "Route not found"
     end
     resp.finish
   end
