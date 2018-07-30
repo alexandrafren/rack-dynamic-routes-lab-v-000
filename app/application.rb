@@ -13,4 +13,3 @@ class Application
   end
 
 end
-  
