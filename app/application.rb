@@ -5,7 +5,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     if req.path.match(/items/)
-      search_item = resp.params["item"]
+      search_item = req.path.split("/songs/").last
       if @@items.include?(search_item)
         resp.write "#{search_item.price}"
       else
