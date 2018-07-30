@@ -6,6 +6,7 @@ class Application
     req = Rack::Request.new(env)
     if req.path.match(/items/)
       search_item = req.path.split("/items/").last
+      new_item = @@items.find { |i| i.name == search_item}
       if @@items.include?(search_item)
         resp.write "#{search_item.price}"
       else
